@@ -1,4 +1,4 @@
-package com.example.spacetapp.Home
+package com.example.spacetapp.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

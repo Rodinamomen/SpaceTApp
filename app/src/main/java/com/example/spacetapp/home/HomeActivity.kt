@@ -1,4 +1,4 @@
-package com.example.spacetapp.Home
+package com.example.spacetapp.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

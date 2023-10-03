@@ -7,16 +7,16 @@
 
     <fragment
         android:id="@+id/solarMapFragment"
-        android:name="com.example.spacetapp.Home.SolarMapFragment"
+        android:name="com.example.spacetapp.home.SolarMapFragment"
         android:label="fragment_solar_map"
-        tools:layout="@layout/fragment_solar_map" >
+        tools:layout="@layout/fragment_solar_map">
         <action
             android:id="@+id/action_solarMapFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"
-        android:name="com.example.spacetapp.Home.ExploreFragment"
+        android:name="com.example.spacetapp.home.ExploreFragment"
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore" />
 </navigation>
