@@ -16,21 +16,27 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.spacetapp.Authentiaction.LoginFragment"
+        android:name="com.example.spacetapp.Authentiaction.Login.view.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeActivity"
+            app:destination="@id/homeActivity" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.spacetapp.Authentiaction.SignUpFragment"
+        android:name="com.example.spacetapp.Authentiaction.SignUp.view.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
             android:id="@+id/action_signUpFragment_to_homeActivity"
             app:destination="@id/homeActivity" />
+        <action
+            android:id="@+id/action_signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <activity
         android:id="@+id/homeActivity"
