@@ -3,13 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navgraph"
-    app:startDestination="@id/solarMapFragment">
+    app:startDestination="@id/videoFragment">
 
     <fragment
         android:id="@+id/solarMapFragment"
         android:name="com.example.spacetapp.Home.solarmap.view.SolarMapFragment"
         android:label="fragment_solar_map"
-        tools:layout="@layout/fragment_solar_map" >
+        tools:layout="@layout/fragment_solar_map">
         <action
             android:id="@+id/action_solarMapFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
@@ -18,7 +18,7 @@
         android:id="@+id/exploreFragment"
         android:name="com.example.spacetapp.Home.ExploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" >
+        tools:layout="@layout/fragment_explore">
         <action
             android:id="@+id/action_exploreFragment_to_articleFragment"
             app:destination="@id/articleFragment" />
@@ -27,5 +27,13 @@
         android:id="@+id/articleFragment"
         android:name="com.example.spacetapp.Home.ArticleFragment"
         android:label="fragment_article"
-        tools:layout="@layout/fragment_article" />
+        tools:layout="@layout/fragment_article">
+        <action
+            android:id="@+id/action_articleFragment_to_videoFragment"
+            app:destination="@id/videoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.example.spacetapp.Home.VideoFragment"
+        android:label="VideoFragment" />
 </navigation>
