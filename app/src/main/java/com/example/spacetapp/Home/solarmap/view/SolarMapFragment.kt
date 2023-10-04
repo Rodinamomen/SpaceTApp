@@ -34,6 +34,7 @@ class SolarMapFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var editor: Editor
     lateinit var SolarMapViewModel: solarMapViewModel
+     var flag: Int = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,16 +52,19 @@ class SolarMapFragment : Fragment() {
             Context.MODE_PRIVATE)
         editor=sharedPreferences.edit()
         SolarMapViewModel.userScore.observe(requireActivity()){ data ->
-           if(data>=0){
+           if(flag>=0){
                findNavController().navigate(R.id.action_solarMapFragment_to_exploreFragment)
-           }else {
+               flag= -1
+           }else if (flag==-1 && data<0){
                MaterialAlertDialogBuilder(requireContext()).setTitle("").setMessage("Your score Must be 0 or more").setPositiveButton("Ok", null)
                    .show()
            }
         }
         mercury.setOnClickListener {
-            val emailShared= sharedPreferences.getString(EMAIL_KEY,"null")
+            flag=0
+            var emailShared= sharedPreferences.getString(EMAIL_KEY,"null")
             emailShared?.let { it1 -> SolarMapViewModel.getUserScore(it1) }
+
         }
     }
     private fun gettingViewModelReady(context:Context){
