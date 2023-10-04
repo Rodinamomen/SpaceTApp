@@ -16,6 +16,7 @@ class VideoFragment : Fragment() {
     private lateinit var youTubePlayerView: YouTubePlayerView
     private lateinit var ivNext: ImageView
     private lateinit var tvPlanetName: TextView
+    private var pause: Boolean = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +29,7 @@ class VideoFragment : Fragment() {
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
         tvPlanetName.text = "Mercury"
         ivNext.setOnClickListener {
+            pause = true
             findNavController().navigate(R.id.action_videoFragment_to_quizFragment)
         }
 
@@ -36,6 +38,9 @@ class VideoFragment : Fragment() {
                 val videoId = "B588JHKSlEE"
                 youTubePlayer.loadVideo(videoId, 0f)
                 youTubePlayer.play()
+                if (pause) {
+                    youTubePlayer.pause()
+                }
             }
         })
         return view
