@@ -30,10 +30,9 @@ class VideoFragment : Fragment() {
 //            findNavController().navigate(R.id.)
         }
 
-        // Set up YouTubePlayerView with a video ID and autoPlay
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer) {
-                val videoId = "qAHMCZBwYo4"
+                val videoId = "B588JHKSlEE"
                 youTubePlayer.loadVideo(videoId, 0f)
                 youTubePlayer.play()
             }
