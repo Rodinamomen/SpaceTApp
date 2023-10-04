@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.spacetapp.R
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
@@ -27,7 +28,7 @@ class VideoFragment : Fragment() {
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
         tvPlanetName.text = "Mercury"
         ivNext.setOnClickListener {
-//            findNavController().navigate(R.id.)
+            findNavController().navigate(R.id.action_videoFragment_to_quizFragment)
         }
 
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {

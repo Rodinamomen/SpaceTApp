@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_navgraph"
-    app:startDestination="@id/videoFragment">
+    app:startDestination="@id/solarMapFragment">
 
     <fragment
         android:id="@+id/solarMapFragment"
         android:name="com.example.spacetapp.Home.solarmap.view.SolarMapFragment"
-        android:label="fragment_solar_map"
+        android:label="Solar Map"
         tools:layout="@layout/fragment_solar_map">
         <action
             android:id="@+id/action_solarMapFragment_to_exploreFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/exploreFragment"
         android:name="com.example.spacetapp.Home.ExploreFragment"
-        android:label="fragment_explore"
+        android:label="Explore"
         tools:layout="@layout/fragment_explore">
         <action
             android:id="@+id/action_exploreFragment_to_articleFragment"
@@ -35,5 +35,14 @@
     <fragment
         android:id="@+id/videoFragment"
         android:name="com.example.spacetapp.Home.VideoFragment"
-        android:label="VideoFragment" />
+        android:label="VideoFragment">
+        <action
+            android:id="@+id/action_videoFragment_to_quizFragment"
+            app:destination="@id/quizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizFragment"
+        android:name="com.example.spacetapp.Home.QuizFragment"
+        android:label="fragment_quiz"
+        tools:layout="@layout/fragment_quiz" />
 </navigation>

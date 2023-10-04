@@ -22,7 +22,7 @@
         android:text="Earth"
         android:textAlignment="center"
         android:textColor="@color/yellow"
-        android:textSize="38sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/iv_next_video"
         app:layout_constraintEnd_toEndOf="parent"
