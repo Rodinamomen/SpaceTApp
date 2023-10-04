@@ -1,5 +1,7 @@
 package com.example.spacetapp.Authentiaction
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,18 +9,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
+import com.example.spacetapp.Authentiaction.Login.view.LoginFragment
 import com.example.spacetapp.R
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 
 class SplashFragment : Fragment() {
-
+    companion object {
+        const val EMAIL_KEY = "email_key"
+        const val PASSWORD_KEY = "password_key"
+    }
+    lateinit var editor: SharedPreferences.Editor
+    lateinit var sharedPreferences: SharedPreferences
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,7 +35,16 @@ class SplashFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         lifecycleScope.launch {
             delay(5000)
-            findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+            sharedPreferences= requireActivity().getSharedPreferences(
+                LoginFragment.SHARED_PREFS,
+                Context.MODE_PRIVATE)
+            editor=sharedPreferences.edit()
+            if(sharedPreferences.getString(EMAIL_KEY,null)==null && sharedPreferences.getString(PASSWORD_KEY,null)==null){
+                findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+            }else{
+                findNavController().navigate(R.id.action_splashFragment_to_homeActivity)
+                requireActivity().finish()
+            }
         }
     }
 

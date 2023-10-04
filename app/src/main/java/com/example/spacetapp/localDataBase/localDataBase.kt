@@ -9,4 +9,5 @@ interface localDataBase {
     suspend fun isUserExist(email: String, password: String ): Boolean
 
     suspend fun isEmailExist(email: String): Boolean
+    suspend fun getUserScore(userEmail: String): Int
 }
