@@ -1,6 +1,8 @@
 package com.example.spacetapp.Authentiaction.SignUp.view
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -25,12 +27,20 @@ import com.google.android.material.textfield.TextInputLayout
 
 
 class SignUpFragment : Fragment() {
+    companion object {
+        const val SHARED_PREFS = "shared_prefs"
+        const val EMAIL_KEY = "email_key"
+        const val PASSWORD_KEY = "password_key"
+    }
+    lateinit var editor: Editor
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var userName: TextInputLayout
     lateinit var userEmail: TextInputLayout
     lateinit var userPassword: TextInputLayout
     lateinit var signupBtn: Button
     lateinit var logintxt: TextView
     lateinit var SignUpViewModel: signUpViewModel
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -61,8 +71,6 @@ class SignUpFragment : Fragment() {
         logintxt.setOnClickListener {
             findNavController().navigate(R.id.action_signUpFragment_to_loginFragment)
         }
-
-
     }
     private fun gettingViewModelReady(context:Context){
        val SignUpViewModelFactory = signUpViewModelFactory(signUpRepoImp(localDataBaseImp(context)))
@@ -85,6 +93,11 @@ class SignUpFragment : Fragment() {
             SignUpViewModel.insertUser(
                User(userName =userName, userPassword = password, userEmail = email , userScore = 0)
             )
+            sharedPreferences= requireActivity().getSharedPreferences(SHARED_PREFS,Context.MODE_PRIVATE)
+            editor= sharedPreferences.edit()
+            editor.putString(EMAIL_KEY, email)
+            editor.putString(PASSWORD_KEY,password)
+            editor.commit()
             Toast.makeText(context, "Done", Toast.LENGTH_SHORT).show()
             view?.findNavController()?.navigate(R.id.action_signUpFragment_to_homeActivity)
             requireActivity().finish()
@@ -103,6 +116,4 @@ class SignUpFragment : Fragment() {
                 .show()
         }
     }
-
-
 }

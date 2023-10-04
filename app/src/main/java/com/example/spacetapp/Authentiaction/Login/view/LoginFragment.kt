@@ -1,6 +1,8 @@
 package com.example.spacetapp.Authentiaction.Login.view
 
 import android.content.Context
+import android.content.SharedPreferences
+import android.content.SharedPreferences.Editor
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,6 +26,13 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.android.material.textfield.TextInputLayout
 
 class LoginFragment : Fragment() {
+    companion object {
+        const val SHARED_PREFS = "shared_prefs"
+        const val EMAIL_KEY = "email_key"
+        const val PASSWORD_KEY = "password_key"
+    }
+    lateinit var editor: Editor
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var signup_txt:TextView
     lateinit var userEmail: TextInputLayout
     lateinit var userPassword: TextInputLayout
@@ -38,6 +47,8 @@ class LoginFragment : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        sharedPreferences= requireActivity().getSharedPreferences(SHARED_PREFS,Context.MODE_PRIVATE)
+        editor=sharedPreferences.edit()
         signup_txt= view.findViewById(R.id.signup_txt)
         userEmail=view.findViewById(R.id.email_textinput)
         userPassword=view.findViewById(R.id.password_textinput)
@@ -50,6 +61,9 @@ class LoginFragment : Fragment() {
             LoginViewModel.isUserWithEmailExists.observe(requireActivity()) { data ->
                 if (data != null) {
                     if (data) {
+                        editor.putString(EMAIL_KEY,userEmail.editText?.text.toString())
+                        editor.putString(PASSWORD_KEY,userPassword.editText?.text.toString())
+                        editor.commit()
                         view.findNavController().navigate(R.id.action_loginFragment_to_homeActivity)
                         requireActivity().finish()
                     } else {

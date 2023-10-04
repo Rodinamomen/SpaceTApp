@@ -26,4 +26,8 @@ class localDataBaseImp(context:Context): localDataBase {
     override suspend fun isEmailExist(email: String): Boolean {
        return  UserDao.isEmailExist(email)
     }
+
+    override suspend fun getUserScore(userEmail: String): Int {
+        return UserDao.getUserScore(userEmail)
+    }
 }

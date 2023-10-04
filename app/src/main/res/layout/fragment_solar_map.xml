@@ -4,11 +4,96 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home.SolarMapFragment">
+    tools:context=".Home.solarmap.view.SolarMapFragment"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/starsbackground">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/mercury"
+            android:layout_width="120dp"
+            android:layout_height="128dp"
+            android:layout_marginBottom="30dp"
+            android:src="@drawable/mercuryp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.116"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/venus"
+            android:layout_width="101dp"
+            android:layout_height="97dp"
+            android:layout_marginBottom="150dp"
+            android:src="@drawable/venusp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.409"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/earth"
+            android:layout_width="101dp"
+            android:layout_height="97dp"
+            android:layout_marginBottom="250dp"
+            android:src="@drawable/earthp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.693"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/mars"
+            android:layout_width="107dp"
+            android:layout_height="99dp"
+            android:layout_marginBottom="350dp"
+            android:src="@drawable/marsp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.911"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/jupiter"
+            android:layout_width="96dp"
+            android:layout_height="98dp"
+            android:layout_marginBottom="450dp"
+            android:src="@drawable/jupiterp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.66"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/saturn"
+            android:layout_width="119dp"
+            android:layout_height="105dp"
+            android:layout_marginBottom="550dp"
+            android:src="@drawable/saturnp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/uranus"
+            android:layout_width="101dp"
+            android:layout_height="96dp"
+            android:layout_marginBottom="616dp"
+            android:src="@drawable/uranus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
 </FrameLayout>
