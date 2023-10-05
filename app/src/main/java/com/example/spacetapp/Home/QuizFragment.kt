@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.fragment.findNavController
 import com.example.spacetapp.R
 
 class QuizFragment : Fragment() {
@@ -18,7 +20,7 @@ class QuizFragment : Fragment() {
     private lateinit var btnQ3A1: Button
     private lateinit var btnQ3A2: Button
     private lateinit var tvPlanetName: TextView
-
+    lateinit var next_img : ImageView
     companion object {
         var score = 0
     }
@@ -37,7 +39,9 @@ class QuizFragment : Fragment() {
         btnQ2A2 = view.findViewById(R.id.btn_q2_a2)
         btnQ3A1 = view.findViewById(R.id.btn_q3_a1)
         btnQ3A2 = view.findViewById(R.id.btn_q3_a2)
+
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
+
         tvPlanetName.text = "Quiz"
         setQ()
         return view
@@ -89,4 +93,12 @@ class QuizFragment : Fragment() {
         }
 
     }
-}
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        next_img= view.findViewById(R.id.iv_next_video)
+        next_img.setOnClickListener {
+            findNavController().navigate(R.id.action_quizFragment_to_mapFragment)
+        }
+    }
+    }

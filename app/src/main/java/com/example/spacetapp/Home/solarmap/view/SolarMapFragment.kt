@@ -80,7 +80,7 @@ class SolarMapFragment : Fragment() {
             findNavController().navigate(R.id.action_solarMapFragment_to_aboutFragment)
         }
         rocketImg.setOnClickListener {
-            findNavController().navigate(R.id.action_solarMapFragment_to_reservationFragment)
+            findNavController().navigate(R.id.action_solarMapFragment_to_reservationFragment2)
         }
     }
 

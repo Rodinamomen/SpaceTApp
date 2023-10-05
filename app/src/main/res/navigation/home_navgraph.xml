@@ -16,6 +16,9 @@
         <action
             android:id="@+id/action_solarMapFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_solarMapFragment_to_reservationFragment2"
+            app:destination="@id/reservationFragment2" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"
@@ -62,4 +65,8 @@
         android:name="com.example.spacetapp.Home.mapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/reservationFragment2"
+        android:name="com.example.spacetapp.Home.ReservationFragment"
+        android:label="ReservationFragment" />
 </navigation>
