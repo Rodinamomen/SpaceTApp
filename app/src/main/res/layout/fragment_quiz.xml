@@ -10,6 +10,14 @@
         android:layout_height="match_parent"
         tools:context=".Home.QuizFragment">
 
+        <include
+            android:id="@+id/toolbar_video"
+            layout="@layout/toolbar_planet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
             android:id="@+id/ll_q1"
@@ -21,7 +29,7 @@
             android:padding="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_video">
 
             <TextView
                 android:id="@+id/tv_q1"
@@ -29,31 +37,26 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="TextView"
+                android:text="Which planet is closest to the Sun in our solar system? ☀️"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q1_a1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Venus" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q1_a2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/btn_q1_a3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Mercury" />
 
         </LinearLayout>
 
@@ -75,31 +78,26 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="TextView"
+                android:text="What is the size of Mercury compared to Earth? 🌍"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q2_a1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Smaller than Earth" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q2_a2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/btn_q2_a3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Larger than Earth" />
 
         </LinearLayout>
 
@@ -122,31 +120,26 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="TextView"
+                android:text="Which planet is the closest neighbor to Mercury? 🫂"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q3_a1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Mars" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_q3_a2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="Button" />
-
-            <Button
-                android:id="@+id/btn_q3_a3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:text="Button" />
+                android:background="@drawable/shape_normal_btn"
+                android:text="Venus" />
 
         </LinearLayout>
 
