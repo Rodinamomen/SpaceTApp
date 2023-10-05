@@ -67,7 +67,6 @@ class SolarMapFragment : Fragment() {
             flag=0
             var emailShared= sharedPreferences.getString(EMAIL_KEY,"null")
             emailShared?.let { it1 -> SolarMapViewModel.getUserScore(it1) }
-
         }
         questionImg.setOnClickListener{
            findNavController().navigate(R.id.action_solarMapFragment_to_aboutFragment)

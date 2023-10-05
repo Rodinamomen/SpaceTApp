@@ -100,6 +100,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/reservation_rocket"
             android:layout_width="130dp"
             android:layout_height="150dp"
             android:layout_marginBottom="24dp"
