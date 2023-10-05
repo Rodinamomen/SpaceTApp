@@ -70,8 +70,7 @@ class SolarMapFragment : Fragment() {
 
         }
         questionImg.setOnClickListener{
-            MaterialAlertDialogBuilder(requireContext()).setTitle("About Us").setMessage("Your score Must be 0 or more").setPositiveButton("Ok", null)
-                .show()
+           findNavController().navigate(R.id.action_solarMapFragment_to_aboutFragment)
         }
     }
     private fun gettingViewModelReady(context:Context){
