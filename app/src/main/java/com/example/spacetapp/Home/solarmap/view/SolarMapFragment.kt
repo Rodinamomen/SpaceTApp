@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebView
 import android.webkit.WebViewClient
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -23,6 +24,7 @@ import com.example.spacetapp.Home.solarmap.viewmodel.solarMapViewModel
 import com.example.spacetapp.R
 import com.example.spacetapp.localDataBase.localDataBaseImp
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import pl.droidsonroids.gif.GifImageView
 
 
@@ -34,6 +36,7 @@ class SolarMapFragment : Fragment() {
     lateinit var sharedPreferences: SharedPreferences
     lateinit var editor: Editor
     lateinit var SolarMapViewModel: solarMapViewModel
+    lateinit var questionImg: ImageView
      var flag: Int = 0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +48,7 @@ class SolarMapFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mercury= view.findViewById(R.id.mercury)
+        questionImg= view.findViewById(R.id.question_img)
         gettingViewModelReady(requireContext())
         sharedPreferences= requireActivity().getSharedPreferences(
             LoginFragment.SHARED_PREFS,
@@ -64,6 +68,10 @@ class SolarMapFragment : Fragment() {
             var emailShared= sharedPreferences.getString(EMAIL_KEY,"null")
             emailShared?.let { it1 -> SolarMapViewModel.getUserScore(it1) }
 
+        }
+        questionImg.setOnClickListener{
+            MaterialAlertDialogBuilder(requireContext()).setTitle("About Us").setMessage("Your score Must be 0 or more").setPositiveButton("Ok", null)
+                .show()
         }
     }
     private fun gettingViewModelReady(context:Context){
