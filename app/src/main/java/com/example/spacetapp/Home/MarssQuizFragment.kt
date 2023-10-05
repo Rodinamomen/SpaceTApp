@@ -19,7 +19,7 @@ import com.example.spacetapp.Home.solarmap.viewmodel.solarMapViewModel
 import com.example.spacetapp.R
 import com.example.spacetapp.localDataBase.localDataBaseImp
 
-class QuizFragment : Fragment() {
+class MarssQuizFragment : Fragment() {
 
     private lateinit var btnQ1A1: Button
     private lateinit var btnQ1A2: Button
@@ -42,7 +42,7 @@ class QuizFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_quiz, container, false)
+        val view = inflater.inflate(R.layout.fragment_quiz_mars, container, false)
 
         // Find buttons by ID within the fragment's view
         btnQ1A1 = view.findViewById(R.id.btn_q1_a1)
@@ -61,10 +61,10 @@ class QuizFragment : Fragment() {
 //        yourDatabase.userDao().updateUserScore("user@example.com", score)
         gettingViewModelReady(requireContext())
         scoreViewModel.updateUserScore(getEmail(), score)
-        ivNext.setOnClickListener {
-            findNavController().navigate(R.id.action_quizFragment_to_solarMapFragment)
-        }
 
+        ivNext.setOnClickListener {
+            findNavController().navigate(R.id.action_marssQuizFragment_to_solarMapFragment)
+        }
         return view
     }
 
@@ -82,7 +82,7 @@ class QuizFragment : Fragment() {
         scoreViewModel = ViewModelProvider(
             requireActivity(),
             scoreViewModelFactory
-        ).get(solarMapViewModel::class.java)
+        )[solarMapViewModel::class.java]
     }
 
     private fun setQ() {

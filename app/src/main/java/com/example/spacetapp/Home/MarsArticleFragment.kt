@@ -12,24 +12,26 @@ import com.example.spacetapp.R
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
-class ArticleFragment : Fragment() {
+class MarsArticleFragment : Fragment() {
     private lateinit var ivNext: ImageView
     private lateinit var tvPlanetName: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_article, container, false)
+        return inflater.inflate(R.layout.fragment_article_mars, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         ivNext = view.findViewById(R.id.iv_next_video)
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
-        tvPlanetName.text = "Mercury"
+        tvPlanetName.text = "Mars"
+
         ivNext.setOnClickListener {
-            findNavController().navigate(R.id.action_articleFragment_to_videoFragment)
+            findNavController().navigate(R.id.action_marsArticleFragment_to_marsVideoFragment)
         }
     }
 }

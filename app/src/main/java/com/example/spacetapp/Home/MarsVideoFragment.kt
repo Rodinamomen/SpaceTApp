@@ -12,7 +12,7 @@ import com.example.spacetapp.R
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
 import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener
 
-class VideoFragment : Fragment() {
+class MarsVideoFragment : Fragment() {
     private lateinit var youTubePlayerView: YouTubePlayerView
     private lateinit var ivNext: ImageView
     private lateinit var tvPlanetName: TextView
@@ -23,15 +23,15 @@ class VideoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_video, container, false)
+        val view = inflater.inflate(R.layout.fragment_video_mars, container, false)
 
         youTubePlayerView = view.findViewById(R.id.youtube_player_view)
         ivNext = view.findViewById(R.id.iv_next_video)
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
-        tvPlanetName.text = "Mercury"
+        tvPlanetName.text = "Mars"
         ivNext.setOnClickListener {
             pause = true
-            findNavController().navigate(R.id.action_videoFragment_to_quizFragment)
+            findNavController().navigate(R.id.action_marsVideoFragment_to_marssQuizFragment)
         }
 
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {

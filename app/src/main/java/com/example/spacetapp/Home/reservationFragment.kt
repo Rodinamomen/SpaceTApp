@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.example.spacetapp.R
 
 
@@ -41,6 +42,8 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 "RESERVED",
                 Toast.LENGTH_LONG
             ).show()
+            findNavController().navigate(R.id.action_reservationFragment_to_solarMapFragment)
+
         }
 
         val ad: ArrayAdapter<String> = ArrayAdapter(

@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_solarMapFragment_to_reservationFragment"
             app:destination="@id/reservationFragment" />
+        <action
+            android:id="@+id/action_solarMapFragment_to_marsExploreFragment"
+            app:destination="@id/marsExploreFragment" />
     </fragment>
     <fragment
         android:id="@+id/exploreFragment"
@@ -50,7 +53,11 @@
         android:id="@+id/quizFragment"
         android:name="com.example.spacetapp.Home.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <action
+            android:id="@+id/action_quizFragment_to_solarMapFragment"
+            app:destination="@id/solarMapFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.spacetapp.Home.AboutFragment"
@@ -59,5 +66,41 @@
     <fragment
         android:id="@+id/reservationFragment"
         android:name="com.example.spacetapp.Home.ReservationFragment"
-        android:label="ReservationFragment" />
+        android:label="ReservationFragment" >
+        <action
+            android:id="@+id/action_reservationFragment_to_solarMapFragment"
+            app:destination="@id/solarMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marsExploreFragment"
+        android:name="com.example.spacetapp.Home.MarsExploreFragment"
+        android:label="MarsExploreFragment" >
+        <action
+            android:id="@+id/action_marsExploreFragment_to_marsArticleFragment"
+            app:destination="@id/marsArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marsArticleFragment"
+        android:name="com.example.spacetapp.Home.MarsArticleFragment"
+        android:label="MarsArticleFragment" >
+        <action
+            android:id="@+id/action_marsArticleFragment_to_marsVideoFragment"
+            app:destination="@id/marsVideoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marsVideoFragment"
+        android:name="com.example.spacetapp.Home.MarsVideoFragment"
+        android:label="MarsVideoFragment" >
+        <action
+            android:id="@+id/action_marsVideoFragment_to_marssQuizFragment"
+            app:destination="@id/marssQuizFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/marssQuizFragment"
+        android:name="com.example.spacetapp.Home.MarssQuizFragment"
+        android:label="MarssQuizFragment" >
+        <action
+            android:id="@+id/action_marssQuizFragment_to_solarMapFragment"
+            app:destination="@id/solarMapFragment" />
+    </fragment>
 </navigation>
