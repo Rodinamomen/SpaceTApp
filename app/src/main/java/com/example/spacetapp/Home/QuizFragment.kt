@@ -1,5 +1,7 @@
 package com.example.spacetapp.Home
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,7 +9,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import androidx.lifecycle.ViewModelProvider
+import com.example.spacetapp.Authentiaction.Login.view.LoginFragment
+import com.example.spacetapp.Home.solarmap.repo.solarMapRepoImp
+import com.example.spacetapp.Home.solarmap.viewmodel.SolarMapViewModelFactory
+import com.example.spacetapp.Home.solarmap.viewmodel.solarMapViewModel
 import com.example.spacetapp.R
+import com.example.spacetapp.localDataBase.localDataBaseImp
 
 class QuizFragment : Fragment() {
 
@@ -18,6 +26,9 @@ class QuizFragment : Fragment() {
     private lateinit var btnQ3A1: Button
     private lateinit var btnQ3A2: Button
     private lateinit var tvPlanetName: TextView
+    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var scoreViewModel: solarMapViewModel
+
 
     companion object {
         var score = 0
@@ -39,8 +50,28 @@ class QuizFragment : Fragment() {
         btnQ3A2 = view.findViewById(R.id.btn_q3_a2)
         tvPlanetName = view.findViewById(R.id.tv_planet_name)
         tvPlanetName.text = "Quiz"
+        score = 0
         setQ()
+//        getEmail()
+//        yourDatabase.userDao().updateUserScore("user@example.com", score)
+        gettingViewModelReady(requireContext())
+        scoreViewModel.updateUserScore(getEmail(), score)
+
         return view
+    }
+
+    private fun getEmail(): String {
+        sharedPreferences = requireActivity().getSharedPreferences(
+            LoginFragment.SHARED_PREFS,
+            Context.MODE_PRIVATE
+        )
+        return sharedPreferences.getString(LoginFragment.EMAIL_KEY, "").toString()
+    }
+
+    private fun gettingViewModelReady(context: Context) {
+        val scoreViewModelFactory =
+            SolarMapViewModelFactory(solarMapRepoImp(localDataBaseImp(context)))
+        scoreViewModel = ViewModelProvider(requireActivity(), scoreViewModelFactory).get(solarMapViewModel::class.java)
     }
 
     private fun setQ() {
