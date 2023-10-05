@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Button
 import android.widget.Spinner
 import android.widget.Toast
 import com.example.spacetapp.R
@@ -18,6 +19,7 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
         "Jupiter", "Saturn", "Uranus"
     )
     private lateinit var spinner: Spinner
+    private lateinit var btnBook: Button
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,8 +31,17 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         spinner = view.findViewById(R.id.spinner_planets)
+        btnBook = view.findViewById(R.id.btn_book)
 
         spinner.onItemSelectedListener = this
+
+        btnBook.setOnClickListener {
+            Toast.makeText(
+                requireContext(),
+                "RESERVED",
+                Toast.LENGTH_LONG
+            ).show()
+        }
 
         val ad: ArrayAdapter<String> = ArrayAdapter(
             requireContext(),
@@ -41,7 +52,6 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
         ad.setDropDownViewResource(
             android.R.layout.simple_spinner_dropdown_item
         )
-
         spinner.adapter = ad
     }
 
@@ -51,11 +61,11 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
         position: Int,
         id: Long
     ) {
-        Toast.makeText(
-            requireContext(),
-            planetNames[position],
-            Toast.LENGTH_LONG
-        ).show()
+//        Toast.makeText(
+//            requireContext(),
+//            planetNames[position],
+//            Toast.LENGTH_LONG
+//        ).show()
     }
 
     override fun onNothingSelected(parent: AdapterView<*>?) {
