@@ -15,12 +15,14 @@ class AboutFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        return inflater.inflate(R.layout.fragment_about, container, false)
+    }
 
-        val v = inflater.inflate(R.layout.fragment_about, container, false)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        ivBack= view.findViewById(R.id.iv_back)
         ivBack.setOnClickListener {
             findNavController().navigate(R.id.action_aboutFragment_to_solarMapFragment)
         }
-        return v
     }
-
 }

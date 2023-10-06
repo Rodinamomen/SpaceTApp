@@ -19,20 +19,20 @@
         android:id="@+id/imageView31"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginEnd="196dp"
+        android:layout_marginEnd="192dp"
         android:layout_marginBottom="616dp"
         android:src="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView30"
-        app:layout_constraintVertical_bias="0.111" />
+        app:layout_constraintVertical_bias="0.425" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/gifImageView"
-        android:layout_width="116dp"
+        android:layout_width="130dp"
         android:layout_height="112dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/mercuryp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar_video" />
@@ -41,11 +41,13 @@
         android:id="@+id/imageView30"
         android:layout_width="25dp"
         android:layout_height="25dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="236dp"
         android:layout_marginBottom="696dp"
         android:src="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_video" />
 
     <ImageView
         android:id="@+id/imageView29"
