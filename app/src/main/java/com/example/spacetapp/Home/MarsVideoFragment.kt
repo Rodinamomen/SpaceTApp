@@ -36,7 +36,7 @@ class MarsVideoFragment : Fragment() {
 
         youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener() {
             override fun onReady(youTubePlayer: com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer) {
-                val videoId = "B588JHKSlEE"
+                val videoId = "8DZl56tS9ko"
                 youTubePlayer.loadVideo(videoId, 0f)
                 youTubePlayer.play()
                 if (pause) {

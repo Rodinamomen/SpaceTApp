@@ -38,7 +38,7 @@
         android:background="@drawable/login_shape"
         android:fontFamily="@font/poppins_medium"
         android:padding="8dp"
-        android:text="Mercury is special. As the closest planet to the Sun, it occupies a region where the Sun’s influence is changing dramatically. The Sun’s magnetic field, which dominates space close to the Sun, is rapidly waning. And Mercury’s orbit – more elliptical or “oval-shaped” than any other planet – allows it to experience a wider range of solar magnetic field conditions than any other planet. As a result, Mercury provides a unique opportunity to study how the Sun’s influence on a planet varies with distance."
+        android:text="Mars holds a distinct place in our solar system. As the fourth planet from the Sun, it occupies a position where it experiences a wide range of solar conditions. Unlike any other planet, Mars endures variations in the Sun's influence due to its elliptical orbit, which is more elongated or 'oval-shaped' than most. This eccentric orbit exposes Mars to diverse solar magnetic field strengths and radiation levels. As a result, studying Mars offers a remarkable opportunity to investigate how a planet's response to the Sun's influence evolves with varying distances from our star, providing valuable insights into the complex interactions between planets and their parent star."
         android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="22sp"
