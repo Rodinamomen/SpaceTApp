@@ -37,7 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="What is the color of the Martian surface? ☀️"
+                android:text="What is the color of the Martian surface? 🔵🔴"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="Does Mars have an atmosphere? 🌍"
+                android:text="Does Mars have an atmosphere? ☁️"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
@@ -120,7 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:padding="16dp"
-                android:text="Which spacecraft has successfully landed on Mars? 🫂"
+                android:text="Which spacecraft has successfully landed on Mars? 🚀"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="20sp" />

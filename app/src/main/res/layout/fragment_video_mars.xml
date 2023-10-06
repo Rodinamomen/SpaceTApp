@@ -30,21 +30,29 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_video"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/login_shape"
-        android:fontFamily="@font/poppins_medium"
-        android:padding="8dp"
-        android:text="Mars holds a distinct place in our solar system. As the fourth planet from the Sun, it occupies a position where it experiences a wide range of solar conditions. Unlike any other planet, Mars endures variations in the Sun's influence due to its elliptical orbit, which is more elongated or 'oval-shaped' than most. This eccentric orbit exposes Mars to diverse solar magnetic field strengths and radiation levels. As a result, studying Mars offers a remarkable opportunity to investigate how a planet's response to the Sun's influence evolves with varying distances from our star, providing valuable insights into the complex interactions between planets and their parent star."
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_player_view" />
+        app:layout_constraintTop_toBottomOf="@+id/youtube_player_view">
 
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/login_shape"
+            android:fontFamily="@font/poppins_medium"
+            android:justificationMode="inter_word"
+            android:padding="16dp"
+            android:text="Mars holds a distinct place in our solar system. As the fourth planet from the Sun, it occupies a position where it experiences a wide range of solar conditions. \n\nUnlike any other planet, Mars endures variations in the Sun's influence due to its elliptical orbit, which is more elongated or 'oval-shaped' than most. \n\nThis eccentric orbit exposes Mars to diverse solar magnetic field strengths and radiation levels. As a result, studying Mars offers a remarkable opportunity to investigate how a planet's response to the Sun's influence evolves with varying distances from our star, providing valuable insights into the complex interactions between planets and their parent star."
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view" />
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

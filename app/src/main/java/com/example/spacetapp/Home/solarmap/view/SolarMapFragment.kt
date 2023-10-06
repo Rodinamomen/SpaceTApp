@@ -34,6 +34,7 @@ class SolarMapFragment : Fragment() {
     }
 
     lateinit var mercury: GifImageView
+    lateinit var mars: GifImageView
     lateinit var sharedPreferences: SharedPreferences
     lateinit var editor: Editor
     lateinit var SolarMapViewModel: solarMapViewModel
@@ -52,6 +53,7 @@ class SolarMapFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         mercury = view.findViewById(R.id.mercury)
+        mars = view.findViewById(R.id.mars)
         questionImg = view.findViewById(R.id.question_img)
         rocketImg = view.findViewById(R.id.reservation_rocket)
 
@@ -75,6 +77,9 @@ class SolarMapFragment : Fragment() {
             flag = 0
             var emailShared = sharedPreferences.getString(EMAIL_KEY, "null")
             emailShared?.let { it1 -> SolarMapViewModel.getUserScore(it1) }
+        }
+        mars.setOnClickListener{
+            findNavController().navigate(R.id.action_solarMapFragment_to_marsExploreFragment)
         }
         questionImg.setOnClickListener {
             findNavController().navigate(R.id.action_solarMapFragment_to_aboutFragment)

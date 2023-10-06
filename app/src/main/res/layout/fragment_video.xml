@@ -30,21 +30,30 @@
         app:layout_constraintTop_toBottomOf="@+id/toolbar_video"
         app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/tv_desc"
-        android:layout_width="0dp"
+    <ScrollView
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="24dp"
-        android:background="@drawable/login_shape"
-        android:fontFamily="@font/poppins_medium"
-        android:padding="8dp"
-        android:text="Mercury is special. As the closest planet to the Sun, it occupies a region where the Sun’s influence is changing dramatically. The Sun’s magnetic field, which dominates space close to the Sun, is rapidly waning. And Mercury’s orbit – more elliptical or “oval-shaped” than any other planet – allows it to experience a wider range of solar magnetic field conditions than any other planet. As a result, Mercury provides a unique opportunity to study how the Sun’s influence on a planet varies with distance."
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/youtube_player_view" />
+        app:layout_constraintTop_toBottomOf="@+id/youtube_player_view">
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/login_shape"
+            android:fontFamily="@font/poppins_medium"
+            android:justificationMode="inter_word"
+            android:padding="16dp"
+            android:text="Mercury is special. As the closest planet to the Sun, it occupies a region where the Sun’s influence is changing dramatically. The Sun’s magnetic field, which dominates space close to the Sun, is rapidly waning. And Mercury’s orbit – more elliptical or “oval-shaped” than any other planet – allows it to experience a wider range of solar magnetic field conditions than any other planet. As a result, Mercury provides a unique opportunity to study how the Sun’s influence on a planet varies with distance."
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view" />
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
