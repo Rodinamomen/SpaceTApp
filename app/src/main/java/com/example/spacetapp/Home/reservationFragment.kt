@@ -9,6 +9,7 @@ import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.Spinner
+import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.spacetapp.R
@@ -21,6 +22,8 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
     )
     private lateinit var spinner: Spinner
     private lateinit var btnBook: Button
+    private lateinit var btnToHome: TextView
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,6 +45,11 @@ class ReservationFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 "RESERVED",
                 Toast.LENGTH_LONG
             ).show()
+            findNavController().navigate(R.id.action_reservationFragment_to_solarMapFragment)
+
+        }
+        btnToHome = view.findViewById(R.id.tv_to_solarmap)
+        btnToHome.setOnClickListener {
             findNavController().navigate(R.id.action_reservationFragment_to_solarMapFragment)
 
         }

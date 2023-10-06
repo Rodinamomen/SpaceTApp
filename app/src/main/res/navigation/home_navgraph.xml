@@ -55,14 +55,18 @@
         android:label="fragment_quiz"
         tools:layout="@layout/fragment_quiz" >
         <action
-            android:id="@+id/action_quizFragment_to_solarMapFragment"
-            app:destination="@id/solarMapFragment" />
+            android:id="@+id/action_quizFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.spacetapp.Home.AboutFragment"
         android:label="fragment_about"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_about" >
+        <action
+            android:id="@+id/action_aboutFragment_to_solarMapFragment"
+            app:destination="@id/solarMapFragment" />
+    </fragment>
     <fragment
         android:id="@+id/reservationFragment"
         android:name="com.example.spacetapp.Home.ReservationFragment"
@@ -101,6 +105,17 @@
         android:label="MarssQuizFragment" >
         <action
             android:id="@+id/action_marssQuizFragment_to_solarMapFragment"
+            app:destination="@id/solarMapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.spacetapp.Home.MapFragment"
+        android:label="MapFragment" >
+        <action
+            android:id="@+id/action_mapFragment_to_reservationFragment"
+            app:destination="@id/reservationFragment" />
+        <action
+            android:id="@+id/action_mapFragment_to_solarMapFragment2"
             app:destination="@id/solarMapFragment" />
     </fragment>
 </navigation>

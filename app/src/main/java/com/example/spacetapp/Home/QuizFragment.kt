@@ -62,7 +62,7 @@ class QuizFragment : Fragment() {
         gettingViewModelReady(requireContext())
         scoreViewModel.updateUserScore(getEmail(), score)
         ivNext.setOnClickListener {
-            findNavController().navigate(R.id.action_quizFragment_to_solarMapFragment)
+            findNavController().navigate(R.id.action_quizFragment_to_mapFragment)
         }
 
         return view
